@@ -1,4 +1,3 @@
-{{ content|safe }}
 
     <hr class="m-0">
 
@@ -12,6 +11,22 @@
         <p>And I think there is nothing better than great company with a great meal and a couple of drinks. </p>
       </div>
 
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <h1>My github repos</h1>
+            <ol>
+            {% for repo in github_repos %}
+                <li>{{ repo.name }}</li>
+            {% endfor %}
+            </ol>
+          </div>
+        </div>
+      </div>
+
+
     </section>
 
   </div>
+

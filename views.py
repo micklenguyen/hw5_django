@@ -6,6 +6,7 @@ def index(request):
     content_html = open("content/index.html").read()
     context = {
         "content": content_html,
+        "page_title": "homepage",
     }
     return render(request, "base.html", context)
 
@@ -17,6 +18,7 @@ def about(request):
     content_html = open("content/about.html").read()
     context = {
         "content": content_html,
+        "page_title": "about",
     }
     return render(request, "base.html", context)
 
@@ -24,13 +26,15 @@ def resume(request):
     content_html = open("content/resume.html").read()
     context = {
         "content": content_html,
+        "page_title": "resume",
     }
     return render(request, "base.html", context)
 
 def blog(request):
-    content_html = open("content/blog.html").read()
+    content_html = open("content/blog .html").read()
     context = {
         "content": content_html,
+        "page_title": "blog",
     }
     return render(request, "base.html", context)
 

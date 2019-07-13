@@ -14,41 +14,45 @@ def index(request):
     return render(request, "index.html", context)
 
 
+
+def resume(request):
+    context = {
+        "page_title": "resume",
+    }
+    return render(request, "resume.html", context)
+
+
 def about(request):
     # Django comes with a "shortcut" function called "render", that
     # lets us read in HTML template files in separate directories to
     # keep our code better organized.
-    content_html = open("content/about.html").read()
     context = {
-        "content": content_html,
         "page_title": "about",
     }
-    return render(request, "base.html", context)
+    return render(request, "about.html", context)
 
-def resume(request):
-    content_html = open("content/resume.html").read()
-    context = {
-        "content": content_html,
-        "page_title": "resume",
-    }
-    return render(request, "base.html", context)
 
-def blog(request):
-    content_html = open("content/blog.html").read()
-    context = {
-        "content": content_html,
-        "page_title": "blog",
-    }
-    return render(request, "base.html", context)
 
-def github_api_example(request):
-    # We can also combine Django with APIs
+def github(request):
     response = requests.get('https://api.github.com/users/micklenguyen/repos')
     repos = response.json()
     context = {
+        "page_title": "GitHub",
         'github_repos': repos,
     }
-    return render(request, 'github.html', context)
+    return render(request, "github.html", context)
+
+
+
+def blog(request):
+    context = {
+        "page_title": "blog",
+    }
+    return render(request, "blog.html", context)
+
+
+
+
 
 
 

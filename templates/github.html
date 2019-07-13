@@ -1,31 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+{% extends "base.html"%}
 
-    <title>About me</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+{% block title %}
+GitHub
+{% endblock title%}
 
-<body>
-    <div class="container">
-      <div class="row">
+{% block content %}
 
-        <div class="col-sm-8">
-            <h1>My github repos</h1>
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="github">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <h2 class="mb-5">My GitHub Repros</h2>
             <ol>
             {% for repo in github_repos %}
                 <li>{{ repo.name }}</li>
             {% endfor %}
             </ol>
+          </div>
         </div>
       </div>
 
-    </div>
-</body>
-</html>
 
+    </section>
 
+  </div>
 
+{% endblock content%}
 

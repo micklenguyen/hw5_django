@@ -1,7 +1,7 @@
 {% extends "base.html"%}
 
 {% block title %}
-About Mickle Nguyen
+About
 {% endblock title%}
 
 {% block content %}
@@ -17,21 +17,6 @@ About Mickle Nguyen
         <p>I love meeting new people and developing friendships.</p>
         <p>And I think there is nothing better than great company with a great meal and a couple of drinks. </p>
       </div>
-
-
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8">
-            <h1>My github repos</h1>
-            <ol>
-            {% for repo in github_repos %}
-                <li>{{ repo.name }}</li>
-            {% endfor %}
-            </ol>
-          </div>
-        </div>
-      </div>
-
 
     </section>
 

@@ -1,14 +1,17 @@
 import requests
 from django.http import HttpResponse
 from django.shortcuts import render
+from django import forms
+import os
 
 def index(request):
-    content_html = open("content/index.html").read()
     context = {
-        "content": content_html,
         "page_title": "homepage",
+        "first_name": "Mickle",
+        "last_name": "Nguyen",
+
     }
-    return render(request, "base.html", context)
+    return render(request, "index.html", context)
 
 
 def about(request):
@@ -31,7 +34,7 @@ def resume(request):
     return render(request, "base.html", context)
 
 def blog(request):
-    content_html = open("content/blog .html").read()
+    content_html = open("content/blog.html").read()
     context = {
         "content": content_html,
         "page_title": "blog",
